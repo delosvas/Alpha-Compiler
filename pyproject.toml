@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "alpha-compiler"
+version = "0.1.0"
+description = "Interpreter for the Alpha programming language"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+[project.scripts]
+alpha = "alpha.main:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["alpha*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
